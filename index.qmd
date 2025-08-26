@@ -1,0 +1,18 @@
+---
+title: "EuroBroadMap"
+subtitle: "Images de l'Europe vue de l'extérieur"
+author: "Grasland C., Didelon-Loiseau C."
+format: html
+---
+
+
+
+
+
+## Archives du projet EuroBroadMap
+
+- **Ouidah, Bénin, 2023**  : [EE CIST 2023 : Méthodes et outils des sciences territoriales](https://ee2023.netlify.app/)
+
+- **Sousse, Tunisie, 2024** : [Geouniv'r 2024](https://worldregio.github.io/geounivr2024/)
+
+
