@@ -1,0 +1,145 @@
+---
+title: "Enquête EuroBroadMap 2010 "
+subtitle: "Données statistiques"
+author: "Claude Grasland"
+date: "2025-08-26"
+date-format: iso
+lang: fr
+format:
+  html:
+    embed-resources: true
+    theme: yeti
+    smooth-scroll: true
+    fontsize: 0.9em
+    toc: true
+    toc-depth: 2
+    toc-title: "."
+    css: custom.css
+    crossrefs-hover: false
+execute:
+  warning: false
+  message: false 
+  cache: false   
+  echo: false
+knitr:
+  opts_chunk:
+    out.width: "100%"
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+```{r}
+library(knitr)
+library(dplyr)
+library(labelled)
+```
+
+
+IL n'a pas été très simple de retrouver 15 ans après les données statistiques mais nous avons fini par retrouver les dernières versions corrigées de la partie statistique de la base de donnée. Nous procédons ici à leur récupération et à leur mise en forme dans un tableau utilisable dans R
+
+
+## Données
+
+Le fichier de données intitulé *ebm_complete.csv* comporte 9167 lignes et 144 colonnes. Il s'ouvre sans difficultés à l'aide du programme R suivant 
+
+```{r}
+don <-read.table("data/2010/ebm_complete.csv", 
+               header=T, 
+               sep=";",
+               quote='"', 
+               stringsAsFactors = T,
+               na.strings = "")
+kable(head(don), caption =  "Extrait de la base de données")
+```
+
+
+Comme on peut le constater il y a beaucoup plus de variables que dans le questionnaire car plusieurs colonnes ont été ajoutées sous la forme de métadonnées ou de variables déduites des réponses. Rappelons que la saisie a été effectuée par les chercheurs des différents pays à partir des questionnaires papiers qui ont ensuite été transmis au coordinateur français pour scanner les données géométriques. Ce sont les chercheurs responsables des enquêtes dans chaque pays qui ont assuré la traduction des réponses de la langue de leur pays vers l'anglais.
+
+## Métadonnées
+
+Un fichier de métadonnées *ebm_meta.csv* a été réalisé à la fin du projet, permettant de comprendre le contenu parfois ésotérique des noms de variables et de faire le lien avec le questionnaire. Il constitue une source indispensable pour reprendre l'analuse des résultats et se charge facilement avec le programme suivant.
+
+
+```{r}
+meta <-read.table("data/2010/ebm_meta.csv", 
+               header=T, 
+               sep=";",
+               quote='"', 
+               stringsAsFactors = F,
+               na.strings = "")
+kable(meta, caption = "Métadonnées")
+```
+
+
+## Fichier complet
+
+Nous procédons à la fusion des deux fichiers de données et métadonnées en un seul en ajoutant la définition des variables à leur code sous la forme d'un label grâce au package labelled. On dispose ainsi d'un fichier plus simple à manipuler et analyser dans R et que l'on enregistre sous le nom *ebm2010.RDS*. Avant cela nous procédons à un recodage variables *G_City* et *G_State* pour rendre plus facile l'identification des lieux d'enquête. Nous modifions également le codage de la variable pratique religieuse pour préciser que la valeur de 0 ne signifie pas forcément l'absence de religion mais peut aussi correspondre à une non réponse ou un refus de répondre. Seule la valeur 1 indique la déclaration d'une religion. On modifie également la variable décrivant la première échelle d'appartenance déclarée pour supprimer les cas complexes et les ex-aequo. Enfin on corrige le domaine d'étude des étudiants du Sénégal qui n'a pas été relevé par les enquêteurs alors que le fichier indique "ART".
+
+```{r}
+var_label(don)<-meta$Explanation
+levels(don$A13_Rank1)
+levels(don$A13_Rank1)<-c(NA,"Local","Infranational","National","Supranational","Global",NA,NA)
+don$A14_Relig<-as.factor(don$A14_Relig)
+levels(don$A14_Relig)<-c("No/NA/RR", "Yes")
+levels(don$G_City)<-c("Alexandrie", "Bakou", "Pékin", "Bangalore", "Bruxelles", "Buea", "Budapest", "Bucarest", "Guangzhou", 
+                    "Coimbra", "Delhi", "Dakar", "Douala", "Dschang", "Erzerum", "Evora", "Fortaleza",
+                    "Iasi", "Istanbul", "Izmir" ,"Khabarovsk", "Chisinau", "Le Havre", "Louvain", "Liège", "Lyon",
+                    "Lisbonne", "Chennai", "Manaus", "Malte", "Moscou", "Maroua", "Ngaoundere" ,"Nanjing",
+                   "Paris" ,"Pondichery" ,"Porto Alegre", "Sao Paulo" ,"Sfax" ,"Shangaï", "Stockholm" ,
+                   "Stavropol", "Tunis", "Wuhan", "Yaounde" ,"Yekaterinburg")
+levels(don$G_State) <- c("Azerbaïdjan", "Belgique", "Brésil", "Chine", "Cameroun", 
+                         "Egypte", "France", "Hongrie", "Inde" ,"Moldavie" ,"Malte",
+                         "Portugal", "Roumanie", "Russie" ,"Sénégal" ,"Suède" ,"Tunisie" ,"Turquie")
+don$D2_answ1<-as.character(don$D2_answ1)
+don$D2_answ2<-as.character(don$D2_answ2)
+don$D2_answ3<-as.character(don$D2_answ3)
+don$D2_answ4<-as.character(don$D2_answ4)
+don$D2_answ5<-as.character(don$D2_answ5)
+
+don$G_Study[don$G_State=="Sénégal"]<-NA
+
+saveRDS(don,"data/2010/ebm2010.RDS")
+```
+
+
+
+
+## Fichier pédagogique
+
+Toutes les variables contenues dans le fichier complet ne sont pas utiles et la taille de celui-ci est à coup sûr trop grande pour des exercices à vocation pédagogique. Nous avons donc produit un tableau plus petit de 22 colonnes qui conserve une partie seulement des variables et leur donne des codes plus simples.
+
+```{r}
+sel <- don %>% select(id= Code, cit=G_City, sta=G_State, stu=G_Study, 
+                    sex=A1_Gender, age=A2_Age, nai=A3_Born_i, nat=A4_Nat1_State, lan=A5_lang1Name,nblan= AX_Nblang, nbmig=AX_nbliv, nbvis = AX_Nbvis,
+                    inc = A10_LevInc_raw, lev = A13_Rank1, rel = A14_Relig, 
+                    rel_name = A14_Relig_Niv1, 
+                    stalik1 = B2_STALIK1_iso, stalik2 = B2_STALIK2_iso, stalik3 = B2_STALIK3_iso,  
+                    staunl1 = B2_STAUNL1_iso, staunl2 = B2_STAUNL2_iso, staunl3 = B2_STAUNL3_iso)
+
+kable(head(sel), caption = "Tableau pédagogique")
+
+saveRDS(sel,"data/2010/ebm2010_exo.RDS")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

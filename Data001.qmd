@@ -48,17 +48,26 @@ La première partie du questionnaire apportait des données de cadrage sur les i
 
 
 ![EuroBroadmap 2010, partie 1](img/survey1.png){width=800}
+
+
 ### Attraction et répulsion
 
 Une manière efficace de mettre à jour les représentations du Monde des étudiants a consisté à leur demander les villes et les pays où ils souhaiteraient vivre ou ne pas vivre dans un futur proche. Ces questions en apparence banales se sont révélées très riches en termes d'interprétation et ont été à l'origine du développement de nombreuses méthodes d'analyse inédites. 
 
-![EuroBroadmap 2010, partie 2](img/survey2.png){width=800}
+![EuroBroadmap 2010, partie 2](img/survey2a.png){width=600}
+
+![EuroBroadmap 2010, partie 2](img/survey2b.png){width=600}
+
 
 ### Découpage du Monde
 
 Cette question centrale du questionnaire devait permettre de découvrir les imaginaires géographiques des étudiants et de repérer en particulier comment ils se situent dans le dcécoupage général du monde qu'ils proposent. Elle a nécessité un lourd travail de post-traitement puisque les réponses étaient initialement données sur un format papier. Il a fallu numriser les polygones et les raccorder à leur étiquette avant de pouvoir démarrer les analyses. **Cette partie de la base est actuellement perdue**  tant sous forme papier que numérique...
 
-![EuroBroadmap 2010, partie 3](img/survey3.png){width=800}
+![EuroBroadmap 2010, partie 3](img/survey3a.png){width=800}
+
+![EuroBroadmap 2010, partie 3](img/survey3b.png){width=400}
+
+
 
 ### Europe dans le Monde
 
