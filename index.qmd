@@ -1,18 +1,62 @@
 ---
-title: "EuroBroadMap"
-subtitle: "Images de l'Europe vue de l'extérieur"
-author: "Grasland C., Didelon-Loiseau C."
-format: html
+title: "Le projet EuroBroadMap "
+subtitle: "A propos"
+author: "Claude Grasland"
+date: "2025-08-26"
+date-format: iso
+lang: fr
+format:
+  html:
+    embed-resources: true
+    theme: yeti
+    smooth-scroll: true
+    fontsize: 0.9em
+    toc: true
+    toc-depth: 2
+    toc-title: "."
+    css: custom.css
+    crossrefs-hover: false
+execute:
+  warning: false
+  message: false 
+  cache: false   
+  echo: false
+knitr:
+  opts_chunk:
+    out.width: "100%"
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
+![](img/banner_ebm.png)
 
 
+## La perception de l'Europe dans le monde
 
+Grâce à l'analyse des cartes mentales du monde, au sein et à l'extérieur de l'UE, des chercheurs ont exploré diverses représentations de l'Europe. Ils sont ainsi arrivés à mieux comprendre les perceptions du rôle mondial de l'Union et son attractivité.
 
-## Archives du projet EuroBroadMap
+Financé par l'UE et constitué d'un consortium international d'équipes de recherche, le projet EuroBroadMap avait pour objectif de découvrir comment l'Europe est perçue. Pour y parvenir, les chercheurs ont élaboré trois types de visions non-eurocentriques de l'Europe dans le monde: subjective, politique et fonctionnelle.
 
-- **Ouidah, Bénin, 2023**  : [EE CIST 2023 : Méthodes et outils des sciences territoriales](https://ee2023.netlify.app/)
+Pour la vision subjective, l'équipe a réalisé une enquête quantitative auprès de 9 300 étudiants non diplômés de 43 villes et 18 pays. L'analyse portait essentiellement sur la perception des migrants et les représentations collectives dans les différents canaux migratoires. L'étude visait les frontières de l'UE et le processus d'élargissement, une question particulièrement sensible traitée dans les médias.
 
-- **Sousse, Tunisie, 2024** : [Geouniv'r 2024](https://worldregio.github.io/geounivr2024/)
+L'aspect politique a étudié la présence de l'Europe dans le discours politique. Les équipes ont étudié les visions institutionnelles de l'Europe produites par les États et par les organisations supranationales ou transnationales. Un résultat intéressant identifié dans ce domaine est que l'UE est perçue comme un acteur politique et économique important mais pas comme une puissance. Il semblerait que la 'puissance politique' de l'UE soit en réalité un élément narratif développé par les institutions de l'UE pour promouvoir l'idée d'une Europe unifiée auprès de ses citoyens.
 
+Le projet EuroBroadMap a aussi analysé la régionalisation objective du monde en termes de flux fonctionnels et de réseaux, ainsi que la position de l'Europe dans cette régionalisation. Le test de différents types de flux tels que le commerce, les finances, la migration et les relations diplomatiques, a aidé à révéler les différentes images de l'Europe dans le monde.
+
+Un certain nombre de ces connaissances ont été obtenues en explorant les différences d'un point de vue critique entre les aspects mentaux, fonctionnels et politiques de l'Europe. Concernant l'attrait de l'Europe pour les étudiants, l'enquête a mis en évidence un très vaste groupe de pays attractifs en Europe du Nord et de l'Ouest. Globalement, les participants ont perçu l'Europe comme un lieu de vie généralement agréable, sain et dynamique.
+
+Le projet EuroBroadMap a contribué à mieux faire connaître la complexité de la situation actuelle de l'Europe dans le monde, d'un point de vue matériel et spirituel. Les résultats du projet peuvent aider l'UE à mieux réussir dans le monde, dans la finance, le commerce et la diplomatie, ainsi que dans d'autres domaines.
+
+Source : [CORDIS](https://cordis.europa.eu/article/id/86512-perceptions-of-europe-in-the-world/fr)
+
+## Quelques liens
+
+- **Présentation des enquêtes**  : [Beauguitte, Didelon, Grasland, 2012](https://shs.cairn.info/revue-politique-europeenne-2012-2-page-156?lang=fr)
+
+- **Rapports intermédiaires** : [HAL-SHS, 2013](https://hal.science/EUROBROADMAP)
+
+- **Site web du projet** : [Archives du web, 2014](https://arquivo.pt/wayback/20141124084227/http://www.eurobroadmap.eu/)
 

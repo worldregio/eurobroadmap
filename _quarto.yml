@@ -12,13 +12,13 @@ website:
     contents:
       - href: index.qmd
         text: "A propos"
-      - section: "DONNEES"
-        contents:       
-      - section: "OBJECTIFS"
-        contents:
+      - section: "L'ENQUETE EBM 2009-2010"
+        contents:  
+          - href: Data001.qmd
+            text: "Questionnaire"
     right: 
       - icon: github # add icons as navbar buttons
-        href: https://github.com/worldregio/afromapr
+        href: https://github.com/worldregio/eurobroadmap
         target: _blank
   page-footer:
     background: dark

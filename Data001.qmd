@@ -1,0 +1,67 @@
+---
+title: "Enquête EuroBroadMap 2010 "
+subtitle: "Questionnaire"
+author: "Claude Grasland"
+date: "2025-08-26"
+date-format: iso
+lang: fr
+format:
+  html:
+    embed-resources: true
+    theme: yeti
+    smooth-scroll: true
+    fontsize: 0.9em
+    toc: true
+    toc-depth: 2
+    toc-title: "."
+    css: custom.css
+    crossrefs-hover: false
+execute:
+  warning: false
+  message: false 
+  cache: false   
+  echo: false
+knitr:
+  opts_chunk:
+    out.width: "100%"
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+
+Les archives du projet EuroBroadMap n'ont pas fait l'objet d'un dépôt en bonne dûe forme à la fin du projet et différentes versions de la base de données corrigée ont circulé avant qu'une version stabilisée ne soit finalement arrêtée tardivement. C'est la raison pour laquelle il est important de repartir de cette dernière version et de la tranformer en un fichier stabilisé une bonne fois pour toutes ... 15 ans après !
+
+
+
+## Le questionnaire 2010
+
+L'enquête avait été réalisée sur format papier sous la forme d'une feuille A3 recto-verso pliée. Chaque enquêteur l'avait ensuite traduit dans la langue de son pays et adapté dans lé détail. Une première phase de test du questionnaire avait permis d'harmoniser au maximum les questions et de s'assurer qu'elles pourraient être posées dans tous les pays dans les mêmes termes.
+
+En dehors des métadonnées enregistrées par l'enquêteur (lieu et date d'enquête, niveau et cursus des étudiants interrogés), toutes les informations ont été recueillies à partir du questionnaire que remplissaient les étudiants d'une même salle de cours. La durée moyenne de réponse était de 15 à 30 minutes.
+
+### Données de cadrage et expérience du monde
+
+La première partie du questionnaire apportait des données de cadrage sur les individus (âge, sexe) mais aussi sur leurs mobilités personnelles et celle de leurs ascendants. On a ainsi pu évaluer l'expérience plus ou moins grande qu'ont les étudiants de l'étranger, des autres pays et des autres langues. Une question portait plus directement sur le niveau d'échelle auquel les étudiants ont le sentiment d'appartenir, du local au global. Mais on verra par la suite que son interprétation s'est avérée difficile. 
+
+
+![EuroBroadmap 2010, partie 1](img/survey1.png){width=800}
+### Attraction et répulsion
+
+Une manière efficace de mettre à jour les représentations du Monde des étudiants a consisté à leur demander les villes et les pays où ils souhaiteraient vivre ou ne pas vivre dans un futur proche. Ces questions en apparence banales se sont révélées très riches en termes d'interprétation et ont été à l'origine du développement de nombreuses méthodes d'analyse inédites. 
+
+![EuroBroadmap 2010, partie 2](img/survey2.png){width=800}
+
+### Découpage du Monde
+
+Cette question centrale du questionnaire devait permettre de découvrir les imaginaires géographiques des étudiants et de repérer en particulier comment ils se situent dans le dcécoupage général du monde qu'ils proposent. Elle a nécessité un lourd travail de post-traitement puisque les réponses étaient initialement données sur un format papier. Il a fallu numriser les polygones et les raccorder à leur étiquette avant de pouvoir démarrer les analyses. **Cette partie de la base est actuellement perdue**  tant sous forme papier que numérique...
+
+![EuroBroadmap 2010, partie 3](img/survey3.png){width=800}
+
+### Europe dans le Monde
+
+La dernière partie du questionnaire visait à demander aux étudiants de tracer leur limite de l'Europe, qu'ils en soient ou non originaires. Cette analyse a montré des convergences générales mais aussi un certain nombre de divergences dans les tracés, notamment vers l'Est avec des inclusions variables de la Turquie et de la Russie. Quant à la question sur les mots associés à l'Europe, elle s'est révélée passionnante mais a soulevé des difficultés de traduction. Les enquêteurs de chaque pays ont en effet été chargé de traduire en anglais les réponses initiales dans la langue du pays, ce qui a engendrée un certain nombre de biais et une perte d'information qui est irréversible puisqueles questionnaires papiers n'ont pas été conservés. 
+
+![EuroBroadmap 2010, partie 4](img/survey4.png){width=800}
