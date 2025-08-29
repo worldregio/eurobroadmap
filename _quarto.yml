@@ -18,6 +18,8 @@ website:
             text: "Questionnaire"
           - href: Data002.qmd
             text: "Données statistiques"
+          - href: Data003.qmd
+            text: "Données géométriques"
     right: 
       - icon: github # add icons as navbar buttons
         href: https://github.com/worldregio/eurobroadmap
